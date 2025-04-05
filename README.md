@@ -9,10 +9,10 @@ Este repositório contém a solução para o processo seletivo técnico que envo
 
 ### 1. 🕷️ Web Scraping
 
-- Acesso automático ao site da ANS:
-  - https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos
-- Download dos arquivos PDF dos Anexos I e II.
-- Compactação dos arquivos em formato `.zip`.
+- Acesso automático ao site da ANS:  
+  https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos  
+- Download dos arquivos PDF dos Anexos I e II  
+- Compactação dos arquivos em formato `.zip`  
 
 📁 Caminho: `web_scraping/`
 
@@ -20,10 +20,10 @@ Este repositório contém a solução para o processo seletivo técnico que envo
 
 ### 2. 🔄 Transformação de Dados
 
-- Extração da tabela completa do Anexo I (PDF).
-- Salvamento dos dados em `.csv`.
-- Substituição das siglas OD e AMB pelas descrições completas.
-- Compactação do CSV em `Teste_GabrielaIsabel.zip`.
+- Extração da tabela completa do Anexo I (PDF)  
+- Salvamento dos dados em `.csv`  
+- Substituição das siglas OD e AMB pelas descrições completas  
+- Compactação do CSV em `Teste_GabrielaIsabel.zip`  
 
 📁 Caminho: `transformacao_dados/`
 
@@ -31,12 +31,12 @@ Este repositório contém a solução para o processo seletivo técnico que envo
 
 ### 3. 🧠 Banco de Dados
 
-- Download dos dados financeiros dos últimos dois anos do repositório da ANS:
-  - [Demonstrativos Contábeis](https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/)
-  - [Dados Cadastrais das Operadoras Ativas](https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/)
-- Criação de estrutura de tabelas e importação via SQL.
-- Consultas analíticas desenvolvidas em PostgreSQL, respondendo:
-  - As 10 operadoras com maiores despesas com "EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS..." no último trimestre e no último ano.
+- Download dos dados financeiros dos últimos dois anos do repositório da ANS:  
+  - [Demonstrativos Contábeis](https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/)  
+  - [Dados Cadastrais das Operadoras Ativas](https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/)  
+- Criação de estrutura de tabelas e importação via SQL  
+- Consultas analíticas desenvolvidas em PostgreSQL, respondendo:  
+  - As 10 operadoras com maiores despesas com *"EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS..."* no último trimestre e no último ano  
 
 📁 Caminho: `banco_de_dados/`
 
@@ -44,12 +44,43 @@ Este repositório contém a solução para o processo seletivo técnico que envo
 
 ### 4. 🔎 API + Interface Web
 
-- Desenvolvimento de servidor em Python para busca textual nos cadastros das operadoras.
-- Interface em Vue.js conectada à API.
-- Testes realizados com coleção no Postman.
+- Desenvolvimento de servidor em Python para busca textual nos cadastros das operadoras  
+- Interface em Vue.js conectada à API  
+- Testes realizados com coleção no Postman  
 
-📁 Caminhos:
-- Backend: `backend/`
-- Frontend (Vue): `frontend/`
+📁 Caminhos:  
+- Backend: `backend/`  
+- Frontend (Vue): `frontend/`  
 
 ---
+
+## 🗃️ Banco de Dados
+
+- Scripts `.sql` disponíveis na pasta `banco_de_dados/`  
+- Compatível com **PostgreSQL > 10.0**
+
+---
+
+## 🧪 Resultados
+
+Os resultados intermediários e finais estão organizados na pasta:
+
+📁 `resultados/`
+
+Incluindo:
+
+- Arquivos `.zip` gerados com os PDFs e CSVs  
+- Tabela extraída do Anexo I em `.csv`
+
+---
+
+## 👩‍💻 Autora
+
+**Gabriela Isabel C. Silva**  
+GitHub: [@Gabrielaisabel7](https://github.com/Gabrielaisabel7)
+
+---
+
+## 📄 Licença
+
+Este projeto é **confidencial** e não deve ser reproduzido ou redistribuído sem autorização do remetente.

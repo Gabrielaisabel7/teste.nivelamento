@@ -1,117 +1,55 @@
-# ✅ Testes de Nivelamento v.250321
 
-Este repositório contém as soluções completas para o processo seletivo técnico de nivelamento, versão 250321. Todos os testes foram desenvolvidos utilizando **Python** e **Vue.js**, abordando desde web scraping até integração com banco de dados e construção de uma API funcional com interface web.
+# Teste de Nivelamento v.250321 - Solução Completa
 
----
-
-## 🧪 1. Teste de Web Scraping
-
-### Linguagem utilizada: Python
-
-- **1.1.** Acesso automatizado ao site da ANS:  
-  `https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos`
-
-- **1.2.** Download automático dos Anexos I e II em formato PDF.
-
-- **1.3.** Compactação dos dois anexos em um único arquivo `.zip`.
-
-📁 Arquivos gerados:
-anexo_I.pdf | anexo_II.pdf | compactação_anexos.zip
+Este repositório contém a solução para o processo seletivo técnico que envolve Web Scraping, Transformação de Dados, Banco de Dados e Desenvolvimento de API com interface web. As tarefas foram divididas em quatro etapas, cada uma atendendo aos requisitos especificados no documento oficial da seleção.
 
 ---
 
-## 🔁 2. Teste de Transformação de Dados
+## ✨ Etapas Realizadas
 
-### Linguagem utilizada: Python
+### 1. 🕷️ Web Scraping
 
-- **2.1.** Extração da tabela "Rol de Procedimentos e Eventos em Saúde" do PDF do Anexo I, em **todas as páginas**.
-- **2.2.** Conversão da tabela em um `.csv` estruturado.
-- **2.3.** Compactação do arquivo CSV em `Teste_GabrielaIsabel.zip`.
-- **2.4.** Substituição de siglas:
-  - `OD → Odontologia`
-  - `AMB → Ambulatorial`
+- Acesso automático ao site da ANS:
+  - https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos
+- Download dos arquivos PDF dos Anexos I e II.
+- Compactação dos arquivos em formato `.zip`.
 
-📁 Arquivos gerados:
-rol_procedimentos.csv > Teste_GabrielaIsabel.zip.
+📁 Caminho: `web_scraping/`
 
 ---
 
+### 2. 🔄 Transformação de Dados
+
+- Extração da tabela completa do Anexo I (PDF).
+- Salvamento dos dados em `.csv`.
+- Substituição das siglas OD e AMB pelas descrições completas.
+- Compactação do CSV em `Teste_GabrielaIsabel.zip`.
+
+📁 Caminho: `transformacao_dados/`
 
 ---
 
-## 🗃️ 3. Teste de Banco de Dados
+### 3. 🧠 Banco de Dados
 
-### Linguagem: SQL (compatível com PostgreSQL 14+)
+- Download dos dados financeiros dos últimos dois anos do repositório da ANS:
+  - [Demonstrativos Contábeis](https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/)
+  - [Dados Cadastrais das Operadoras Ativas](https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/)
+- Criação de estrutura de tabelas e importação via SQL.
+- Consultas analíticas desenvolvidas em PostgreSQL, respondendo:
+  - As 10 operadoras com maiores despesas com "EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS..." no último trimestre e no último ano.
 
-#### Tarefas de Preparação:
-
-- **3.1.** Download dos arquivos dos últimos 2 anos do repositório:  
-  https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/
-
-- **3.2.** Download dos dados cadastrais das operadoras em:  
-  https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/
-
-#### Tarefas de Código:
-
-- **3.3.** Criação das tabelas com `CREATE TABLE` baseadas no CSV.
-- **3.4.** Importação dos dados com `COPY FROM` e controle de encoding.
-- **3.5.** Queries analíticas:
-
-📌 **Consultas desenvolvidas:**
-- Top 10 operadoras com maiores despesas em:
-  - **Último trimestre**
-  - **Último ano**
-
-## 🚀 4. Teste de API REST
-
-### 📌 Linguagens utilizadas: Python (FastAPI) e Vue.js
-
-- **4.1.** Desenvolvimento de uma API REST para exposição dos dados transformados.
-- **4.2.** Implementação de endpoints para:
-  - Listagem de procedimentos.
-  - Consulta detalhada por código de procedimento.
-  - Filtros avançados por categoria (Odontológico, Ambulatorial).
-- **4.3.** Integração com banco de dados PostgreSQL.
-
-📌 **Principais endpoints:**
-
-```http
-GET /procedimentos
-GET /procedimentos/{codigo}
-GET /procedimentos?categoria=Odontológico
-```
-
-📁 **Arquivos gerados:**  
-`backimportacao.py` | `indexvue.html`
+📁 Caminho: `banco_de_dados/`
 
 ---
 
-## 🎨 5. Teste de Interface Web
+### 4. 🔎 API + Interface Web
 
-### 📌 Linguagem utilizada: Vue.js
+- Desenvolvimento de servidor em Python para busca textual nos cadastros das operadoras.
+- Interface em Vue.js conectada à API.
+- Testes realizados com coleção no Postman.
 
-- **5.1.** Criação de uma interface web responsiva para consulta de procedimentos.
-- **5.2.** Consumo da API REST para exibição dos dados em tempo real.
-- **5.3.** Implementação de filtros e paginação dinâmica.
+📁 Caminhos:
+- Backend: `backend/`
+- Frontend (Vue): `frontend/`
 
-📌 **Recursos desenvolvidos:**  
-✔️ Tabela dinâmica com ordenação e pesquisa.  
-✔️ Filtros por tipo de procedimento.  
-✔️ Interface adaptável para desktop e mobile.
-
-📁 **Arquivos gerados:**  
-`App.vue` | `Procedimentos.vue` | `api.js` | 
-
----
-
-## 📌 6. Como Executar o Projeto
-
-### 🔧 Requisitos
-
-- Python 3.10+
-- PostgreSQL 14+
-- Node.js 18+
-
-📌 **Desenvolvido por Gabriela Isabel C Silva**
-📌 *Conteúdo confidencial e restrito*
 ---
